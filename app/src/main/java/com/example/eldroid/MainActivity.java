@@ -42,42 +42,42 @@ public class MainActivity extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String idTXT = prodId.getText().toString();
-                String nameTXT = prodName.getText().toString();
-                String dscTXT = prodDesc.getText().toString();
-                String priceTXT = prodPrice.getText().toString();
-                String qtyTXT = prodQty.getText().toString();
+                String idtext = prodId.getText().toString();
+                String nametext = prodName.getText().toString();
+                String dsctext = prodDesc.getText().toString();
+                String pricetext = prodPrice.getText().toString();
+                String qtytext = prodQty.getText().toString();
 
-                if (idTXT.isEmpty() && !nameTXT.isEmpty() && !dscTXT.isEmpty() && !priceTXT.isEmpty() && !qtyTXT.isEmpty()) {
+                if (idtext.isEmpty() && !nametext.isEmpty() && !dsctext.isEmpty() && !pricetext.isEmpty() && !qtytext.isEmpty()) {
                     prodId.setError("Product ID required");
                     prodId.requestFocus();
                     return;
                 }
-                if (nameTXT.isEmpty() && !idTXT.isEmpty() && !dscTXT.isEmpty() && !priceTXT.isEmpty() && !qtyTXT.isEmpty()) {
+                if (nametext.isEmpty() && !idtext.isEmpty() && !dsctext.isEmpty() && !pricetext.isEmpty() && !qtytext.isEmpty()) {
                     prodName.setError("Product name required");
                     prodName.requestFocus();
                     return;
                 }
-                if (dscTXT.isEmpty() && !idTXT.isEmpty() && !nameTXT.isEmpty() && !priceTXT.isEmpty() && !qtyTXT.isEmpty()) {
+                if (dsctext.isEmpty() && !idtext.isEmpty() && !nametext.isEmpty() && !pricetext.isEmpty() && !qtytext.isEmpty()) {
                     prodDesc.setError("Product description required");
                     prodDesc.requestFocus();
                     return;
                 }
-                if (priceTXT.isEmpty() && !idTXT.isEmpty() && !nameTXT.isEmpty() && !dscTXT.isEmpty() && !qtyTXT.isEmpty()) {
+                if (pricetext.isEmpty() && !idtext.isEmpty() && !nametext.isEmpty() && !dsctext.isEmpty() && !qtytext.isEmpty()) {
                     prodPrice.setError("Product price required");
                     prodPrice.requestFocus();
                     return;
                 }
-                if (qtyTXT.isEmpty() && !idTXT.isEmpty() && !nameTXT.isEmpty() && !dscTXT.isEmpty() && !priceTXT.isEmpty()) {
+                if (qtytext.isEmpty() && !idtext.isEmpty() && !nametext.isEmpty() && !dsctext.isEmpty() && !pricetext.isEmpty()) {
                     prodQty.setError("Product quantity required");
                     prodQty.requestFocus();
                     return;
                 }
 
-                if (idTXT.isEmpty() || nameTXT.isEmpty() || dscTXT.isEmpty() || priceTXT.isEmpty() || qtyTXT.isEmpty()) {
+                if (idtext.isEmpty() || nametext.isEmpty() || dsctext.isEmpty() || pricetext.isEmpty() || qtytext.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Some fields are empty", Toast.LENGTH_SHORT).show();
                 } else {
-                    Boolean checkinsertdata = DB.insertuserdata(idTXT, nameTXT, dscTXT, priceTXT, qtyTXT);
+                    Boolean checkinsertdata = DB.insertuserdata(idtext, nametext, dsctext, pricetext, qtytext);
                     if (checkinsertdata == true) {
                         Toast.makeText(MainActivity.this, "Product added successfully", Toast.LENGTH_SHORT).show();
                         prodId.getText().clear();
